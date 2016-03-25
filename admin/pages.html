@@ -61,8 +61,8 @@
                 <label>Image Link</label>
                 <input id="inputImage" class="form-control input-lg" type="text" placeholder="Image link" value="{{page.Image}}" required>
                 <br/>
-                <!--<label>Fake Link</label>-->
-                <!--<textarea name="inputFakeLink" id="inputFakeLink" class="form-control input-lg" placeholder="Fake Link" rows="3" required>{{page.FakeLink}}</textarea>-->
+                <label>Fake Link</label>
+                <textarea name="inputFakeLink" id="inputFakeLink" class="form-control input-lg" placeholder="Fake Link" rows="3" required>{{page.FakeLink}}</textarea>
                 <br/>
                 <label>Real Link</label>
                 <textarea name="inputRealLink" id="inputRealLink" class="form-control input-lg" placeholder="Real Link" rows="3" required>{{page.RealLink}}</textarea>
@@ -135,13 +135,13 @@
                 "Title": $("#inputTitle").val(),
                 "Description": $("#inputDescription").val(),
                 "Image": $("#inputImage").val(),
-//                "FakeLink": $("#inputFakeLink").val(),
+                "FakeLink": $("#inputFakeLink").val(),
                 "RealLink": $("#inputRealLink").val(),
             };
 
             for (var key in theData) {
                 if (theData[key] === '') {
-                    alert("Can't be blank!")
+                    alert("Can't be blank!");
                     return;
                 }
             }
