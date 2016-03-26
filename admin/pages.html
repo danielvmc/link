@@ -55,6 +55,9 @@
                 <label>Permalink</label>
                 <input id="inputSlug" class="form-control input-lg" type="text" placeholder="Slug" value="{{page.Slug}}" required>
                 <!--<br/>-->
+                <!--<label>File Name</label>-->
+                <!--<input id="inputFileName" class="form-control input-lg" type="text" placeholder="FileName" value="{{page.FileName}}" required>-->
+                <!--<br/>-->
                 <!--<label>Description</label>-->
                 <!--<input id="inputDescription" class="form-control input-lg" type="text" placeholder="Description" value="{{page.Description}}" required>-->
                 <!--<br/>-->
@@ -74,7 +77,7 @@
         </div>
                 <div class="col-lg-4">
                     <label>Links</label>
-            <ul class="list-group">
+            <ul class="list-group sort">
                 {% for page in pages %}
                 <li class="list-group-item">
                     <a href="{{config.url}}/{{page.Slug|e}}">{{page.Title}}</a>
@@ -126,13 +129,15 @@
         });
 
         $("#inputTitle").on("focusout", function(){
-            $("#inputSlug").val(Util.makeSlug($("#inputTitle").val()));
+            $("#inputSlug").val(Date.now() + '-' + Util.makeSlug($("#inputTitle").val()));
+//            $("#inputFileName").val(Date.now() + ($("#inputSlug").val()));
         });
 
         $("#btnSave").on("click", function() {
             var theData = {
                 "Slug": $("#inputSlug").val(),
                 "Title": $("#inputTitle").val(),
+//                "FileName": $("#inputFileName").val(),
 //                "Description": $("#inputDescription").val(),
 //                "Image": $("#inputImage").val(),
                 "FakeLink": $("#inputFakeLink").val(),
@@ -178,6 +183,10 @@
         $(".edit").on("click", function(){
             window.location = "{{config.url}}/admin/links/" + $(this).data("slug");
         });
+    });
+
+    $('ul').append(function () {
+        return $(this).children().get().reverse()
     });
 </script>
 </body>
