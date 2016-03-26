@@ -54,12 +54,12 @@
                 <br/>
                 <label>Permalink</label>
                 <input id="inputSlug" class="form-control input-lg" type="text" placeholder="Slug" value="{{page.Slug}}" required>
-                <br/>
-                <label>Description</label>
-                <input id="inputDescription" class="form-control input-lg" type="text" placeholder="Description" value="{{page.Description}}" required>
-                <br/>
-                <label>Image Link</label>
-                <input id="inputImage" class="form-control input-lg" type="text" placeholder="Image link" value="{{page.Image}}" required>
+                <!--<br/>-->
+                <!--<label>Description</label>-->
+                <!--<input id="inputDescription" class="form-control input-lg" type="text" placeholder="Description" value="{{page.Description}}" required>-->
+                <!--<br/>-->
+                <!--<label>Image Link</label>-->
+                <!--<input id="inputImage" class="form-control input-lg" type="text" placeholder="Image link" value="{{page.Image}}" required>-->
                 <br/>
                 <label>Fake Link</label>
                 <textarea name="inputFakeLink" id="inputFakeLink" class="form-control input-lg" placeholder="Fake Link" rows="3" required>{{page.FakeLink}}</textarea>
@@ -133,8 +133,8 @@
             var theData = {
                 "Slug": $("#inputSlug").val(),
                 "Title": $("#inputTitle").val(),
-                "Description": $("#inputDescription").val(),
-                "Image": $("#inputImage").val(),
+//                "Description": $("#inputDescription").val(),
+//                "Image": $("#inputImage").val(),
                 "FakeLink": $("#inputFakeLink").val(),
                 "RealLink": $("#inputRealLink").val()
             };
